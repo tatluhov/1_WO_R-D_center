@@ -1,0 +1,205 @@
+.pop-up {
+  &__overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 786px;
+    margin: 0 auto;
+    padding: 80px 63px;
+    background-color: #E8E8E8;
+    border-radius: 20px;
+
+    @media screen and (max-width: 575px) {
+      display: flex;
+      max-width: 100%;
+      height: 100%;
+      padding: 50px 20px;
+    }
+  }
+
+  &__tnx {
+    display: none;
+  }
+
+  &__close {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    width: 33px;
+    height: 33px;
+    opacity: 0.3;
+    transition: 0.2s ease-in;
+
+    @media screen and (max-width: 575px) {
+      top: 20px;
+      right: 20px;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 0;
+      display: block;
+      height: 33px;
+      width: 4px;
+      background-color: #333;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__title {
+    display: block;
+    margin: 0 auto 40px;
+
+    @media screen and (max-width: 575px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 40px;
+    text-align: center;
+    color: #0D0D0D;
+
+    @media screen and (max-width: 575px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+
+    @media screen and (max-width: 575px) {
+      gap: 15px;
+    }
+
+    &__label {
+      width: 100%;
+    }
+
+    &__input {
+      width: 100%;
+      padding: 19px 25px;
+      font-size: 24px;
+      line-height: 28.8px;
+      font-weight: 400;
+      color: #0D0D0D;
+      opacity: 0.6;
+      background: #FFFFFF;
+      box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.08);
+      border-radius: 10px;
+      border: 1px solid transparent;
+      transition: 0.2s ease-in;
+
+      @media screen and (max-width: 575px) {
+        padding: 12px;
+        font-size: 18px;
+      }
+
+      &:focus {
+        border-color: #4384b6;
+      }
+
+      &:invalid {
+        border-color: #f00;
+        color: #f00;
+      }
+    }
+
+    &__btn {
+      border: none;
+      padding: 15px 45px;
+      background: #7A0901;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 28px;
+      color: #FFFCF9;
+      filter: drop-shadow(0px 6px 14px rgba(75, 10, 5, 0.2));
+      cursor: pointer;
+      transition: 0.2s ease-in;
+
+      @media screen and (max-width: 575px) {
+        font-size: 20px;
+        padding: 10px 35px;
+      }
+
+      &:hover {
+        background-color: #FFFCF9;
+        filter: drop-shadow(0px 6px 14px rgba(75, 10, 5, 0.2));
+        color: #7A0901;
+      }
+
+      &:active {
+        background-color: #FFFCF9;
+        filter: drop-shadow(0px 6px 14px rgba(75, 10, 5, 0.2));
+        color: #7A0901;
+      }
+
+      &--tnx {
+        display: block;
+        margin: 0 auto;
+        background: #08833B;
+        color: #E8E8E8;
+        filter: drop-shadow(0px 6px 14px rgba(75, 10, 5, 0.2));
+
+        &:hover {
+          background-color: #E8E8E8;
+          filter: drop-shadow(0px 6px 14px rgba(75, 10, 5, 0.2));
+          color: #08833B;
+        }
+
+        &:active {
+          background-color: #E8E8E8;
+          filter: drop-shadow(0px 6px 14px rgba(75, 10, 5, 0.2));
+          color: #08833B;
+        }
+      }
+    }
+
+    &__img {
+      padding: 10px 0 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+
+      @media screen and (max-width: 575px) {
+        padding: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    margin: auto;
+  }
+}
